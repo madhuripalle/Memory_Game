@@ -1,13 +1,39 @@
 <div class="section" ng-controller="PageCtrl">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
+        <div class="row col-lg-12" ng-switch="moduleState">
+            <div ng-switch-when="startModule" class="centerme">
                 <h2>Ready to Challenge your Memory?</h2>
-                <a href="#" class="btn btn-primary btn-lg" ng-click="start()">Start</a>
+                <a class="btn btn-default btn-lg" ng-click="startgame()" id="stbtn">Start</a>
                 <hr>
             </div>
+            <div ng-switch-when="gameModule">
+                <div class="col-lg-8">
+                    <table class="table-top">
+                        <tr ng-repeat="row in deck.rows">
+                            <td ng-repeat="card in row.cards">
+                                <div class="clearfix primary card_container {{!card.isFaceUp ? '' : 'flip'}}" ng-click="isGuarding || check(card)" >
+                                    <div class="card shadow">
+                                        <div class="front face"></div>
+                                        <div class="back face">
+                                            <img style="max-height:95%; max-width:95%" ng-src="{{card.src}}">
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class = "col-lg-4 form-horizontal">
+                    <div class="timer row" ng-class="{critical:isCritical}">{{timeLimit | date: 'm:ss'}}</div>
+                    <div class="row centerme">
+                    <h4>Matched Pairs: {{matchedPairs}}/10</h4>
+                    <div class="startbtn">
+                        <button type="button" class="btn btn-default btn-lg" ng-disabled="inGame == true" ng-click="start()" id="stbtn">Set Timer and Play</button>
+                    </div>
+                </div>
+                </div>
+            </div>
         </div>
-        <!-- /.row -->
     </div>
     <!-- /.container -->
 </div>

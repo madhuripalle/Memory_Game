@@ -7,6 +7,10 @@ body {
     padding-bottom: 20px;
 }
 
+.table-top {
+    border-radius: 5px;
+}
+
 .dropdown,
 .panel-title {
     cursor:pointer;
@@ -16,7 +20,6 @@ body {
     margin-top: 15px;
 }
 
-/* Page Sections */
 .section,
 .section-colored {
     padding: 50px 0;
@@ -51,4 +54,114 @@ body {
 /* 404 Page Styles */
 .error-404 {
     font-size: 8em;
+}
+
+
+.centerme {
+    text-align: center;
+    vertical-align: middle;
+    margin: 5%;
+    padding: 5%;
+}
+
+.card_container {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  vertical-align:middle;
+  text-align:center;
+  padding: 5px;
+  width: 9em;
+  height: 12em;
+  line-height: 12em;
+  z-index: 1;
+  -moz-perspective: 1000;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.card {
+  background-color: #0074D9;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 5px;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -moz-transition: all .25s linear;
+  -webkit-transition: all .25s linear;
+  transition: all .25s linear;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden; 
+}
+.flip .card{
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.face {
+  position: absolute;
+/*  width: 100%;
+  height: 100%;*/
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden; 
+}
+.face.back {
+  display: relative;
+  background-color: #424242;
+  border-radius: 5px;
+  -moz-transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+table {
+    margin: 0px auto;
+}
+
+.timer {
+  display: block;
+  margin: 10px auto;
+  position: relative;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  border-radius: 25px;
+  border: 2px solid #0074D9;
+  font-size: 40px;
+  text-align: center;
+  color: #999;
+}
+
+.startbtn {
+  display: block;
+  margin: 10px auto;
+  position: relative;
+  text-align: center;
+}
+
+#stbtn {
+  border: 2px solid #0074D9;
+}
+
+.critical {
+  color: red;
+}
+
+.cntr {
+  margin: 15px auto;
+}
+
+.points {
+  position: absolute;
 }
